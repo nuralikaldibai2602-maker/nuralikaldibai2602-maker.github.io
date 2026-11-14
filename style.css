@@ -1,0 +1,325 @@
+/* ==========================================================
+   Neymar Jr. 2052 - fictional portfolio (student project)
+   Palette: green #0b5d3b, yellow #ffd23f, blue #1b3a8a, ink #1a1a1a
+   ========================================================== */
+
+/* ---------- Tag selectors: base typography ---------- */
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: "Segoe UI", Roboto, Arial, sans-serif;
+    font-size: 17px;
+    line-height: 1.6;
+    color: #1a1a1a;
+    background-color: #f4f7f2;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: Georgia, "Times New Roman", serif;
+    line-height: 1.25;
+    color: #0b5d3b;
+}
+
+h1 { font-size: 2.4rem; margin: 0 0 8px; }
+h2 { font-size: 1.8rem; margin-top: 0; border-bottom: 3px solid #ffd23f; padding-bottom: 6px; }
+h3 { font-size: 1.4rem; }
+h4 { font-size: 1.2rem; }
+h5 { font-size: 1.05rem; }
+h6 { font-size: 0.95rem; text-transform: uppercase; letter-spacing: 1px; }
+
+p  { margin: 0 0 1em; }
+a  { color: #1b3a8a; }
+a:hover, a:focus { color: #0b5d3b; }
+hr { border: 0; border-top: 1px solid #c9d6c2; }
+
+img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+mark {
+    background-color: #ffd23f;
+    padding: 0 4px;
+}
+
+blockquote {
+    display: flow-root; /* keeps the quote box clear of the floated portrait */
+    margin: 1.2em 0;
+    padding: 12px 20px;
+    border-left: 5px solid #1b3a8a;
+    background-color: #e8eefc;
+    font-style: italic;
+}
+
+blockquote p  { margin: 0 0 6px; }
+blockquote footer { font-size: 0.9rem; font-style: normal; }
+
+/* ---------- ID selectors ---------- */
+#disclaimer {
+    margin: 0;
+    padding: 10px 16px;
+    text-align: center;
+    font-size: 0.9rem;
+    background-color: #ffd23f;
+    color: #1a1a1a;
+    border-bottom: 2px solid #0b5d3b;
+}
+
+#top {
+    scroll-margin-top: 0;
+}
+
+#contact-form {
+    max-width: 640px;
+}
+
+/* ---------- Header and navigation (display + position) ---------- */
+.site-header {
+    padding: 28px 20px 0;
+    text-align: center;
+    background-color: #0b5d3b;
+    color: #ffffff;
+}
+
+.site-header h1 { color: #ffffff; }
+.site-header h1 small { font-size: 1.1rem; color: #ffd23f; font-weight: normal; }
+.tagline { margin-bottom: 20px; color: #e6f2ea; }
+
+/* position: sticky keeps the menu visible while scrolling */
+.main-nav {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    background-color: #08432a;
+}
+
+.main-nav ul {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.main-nav a {
+    display: block;
+    padding: 12px 18px;
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.main-nav a:hover,
+.main-nav a:focus {
+    background-color: #ffd23f;
+    color: #08432a;
+}
+
+/* ---------- Layout and sections (box model) ---------- */
+main {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.section {
+    margin: 24px 0;
+    padding: 24px 28px;
+    background-color: #ffffff;
+    border: 1px solid #d3dccf;
+    border-radius: 10px;
+}
+
+/* ---------- Float and clear ---------- */
+.profile-figure {
+    float: left;
+    width: 300px;
+    margin: 0 24px 12px 0;
+    text-align: center;
+    font-size: 0.85rem;
+    color: #444444;
+}
+
+.clear-float {
+    clear: both;
+}
+
+/* ---------- Lists ---------- */
+.timeline {
+    margin: 0;
+    padding-left: 22px;
+}
+
+.timeline li { margin-bottom: 8px; }
+
+/* ---------- Table ---------- */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 12px;
+}
+
+caption {
+    padding-bottom: 8px;
+    text-align: left;
+    font-weight: 600;
+    color: #0b5d3b;
+}
+
+th, td {
+    padding: 10px 12px;
+    border: 1px solid #c9d6c2;
+    text-align: left;
+}
+
+thead th { background-color: #0b5d3b; color: #ffffff; }
+tbody tr:nth-child(even) { background-color: #f1f6ee; }
+
+/* ---------- Projects ---------- */
+.project {
+    padding: 16px;
+    border: 2px dashed #1b3a8a;
+    border-radius: 8px;
+}
+
+.project h3 small { font-size: 0.8rem; color: #555555; }
+
+.project-figure {
+    margin: 0 0 16px;
+    text-align: center;
+    font-size: 0.85rem;
+    color: #444444;
+}
+
+.project img { display: block; margin: 0 auto 8px; }
+
+details {
+    margin-top: 12px;
+    padding: 10px 14px;
+    background-color: #f1f6ee;
+    border-radius: 6px;
+}
+
+summary { cursor: pointer; font-weight: 600; color: #1b3a8a; }
+dt { font-weight: 700; margin-top: 8px; }
+dd { margin-left: 20px; }
+
+/* aside uses position: relative + offset for a "pinned note" effect */
+.side-note {
+    position: relative;
+    left: 12px;
+    margin-top: 20px;
+    padding: 12px 16px;
+    background-color: #fff8da;
+    border: 1px solid #ffd23f;
+    border-radius: 8px;
+}
+
+.side-note h4 { margin-top: 0; }
+
+/* ---------- Skills (grid) ---------- */
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px 28px;
+    margin-bottom: 16px;
+}
+
+.skill label { display: block; font-weight: 600; }
+.skill progress,
+.skill meter { width: 100%; height: 20px; }
+
+/* ---------- Form ---------- */
+fieldset {
+    padding: 16px 20px;
+    border: 2px solid #0b5d3b;
+    border-radius: 8px;
+}
+
+legend { padding: 0 8px; font-weight: 700; color: #0b5d3b; }
+
+label { display: block; margin-bottom: 4px; font-weight: 600; }
+label.inline { display: inline; margin: 0 14px 0 4px; font-weight: normal; }
+
+input[type="text"],
+input[type="email"],
+select,
+textarea {
+    width: 100%;
+    padding: 9px 10px;
+    font: inherit;
+    border: 1px solid #8a9a86;
+    border-radius: 6px;
+}
+
+input:focus,
+select:focus,
+textarea:focus,
+button:focus {
+    outline: 3px solid #ffd23f;
+    outline-offset: 1px;
+}
+
+button {
+    padding: 10px 24px;
+    font: inherit;
+    font-weight: 700;
+    color: #ffffff;
+    background-color: #1b3a8a;
+    border: 0;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+button:hover { background-color: #0b5d3b; }
+
+address {
+    margin-top: 20px;
+    padding: 12px 16px;
+    font-style: normal;
+    background-color: #f1f6ee;
+    border-left: 5px solid #0b5d3b;
+}
+
+/* ---------- Footer ---------- */
+.site-footer {
+    padding: 20px;
+    text-align: center;
+    font-size: 0.9rem;
+    color: #e6f2ea;
+    background-color: #0b5d3b;
+}
+
+.site-footer p { margin: 4px 0; }
+.site-footer a { color: #ffd23f; }
+
+/* ---------- Responsive: narrow screens ---------- */
+@media (max-width: 700px) {
+    body { font-size: 16px; }
+    h1 { font-size: 1.8rem; }
+
+    .section { padding: 18px 16px; }
+
+    /* a six-row menu would cover the screen, so it scrolls with the page */
+    .main-nav { position: static; }
+    .main-nav ul { flex-direction: column; }
+    .main-nav a { text-align: center; }
+
+    /* float is switched off so the image does not squeeze the text */
+    .profile-figure {
+        float: none;
+        width: 100%;
+        margin: 0 0 16px;
+    }
+
+    .skills-grid { grid-template-columns: 1fr; }
+
+    .side-note { left: 0; }
+
+    th, td { padding: 8px 6px; font-size: 0.9rem; }
+}
